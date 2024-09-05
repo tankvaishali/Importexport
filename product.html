@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styleing.css">
+    <title>PRODUCT/IMPORT EXPORT</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- aos CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <style>
+        .img-mains {
+            height: 90vh;
+            width: 100%;
+            background-size: cover;
+            background-image: url(./assets/images/product-bg.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: inset 0px 0px 1500px 100px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            overflow: auto;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-black fixed-top mb-lg-5  ">
+        <div class="container">
+            <a class="navbar-brand col-lg-6" href="index.html" title="Frutics">
+                <img src="assets/images/logo1.png" alt="Frutics">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon bg-light"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto p-3">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link active" href="product.html">Product</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="mt-5 py-3" data-aos="zoom-in" data-aos-duration="2000">
+            <div class="img-mains d-flex justify-content-center align-items-center ">
+                <h1 class="text-white">products</h1>
+            </div>
+        </section>
+        <section class="container mt-5 py-5">
+            <div class="row portfolio_active" id="em_load">
+                <div class="tts text-center" data-aos="zoom-in-up" data-aos-duration="2000">
+                    <div class="ttin">
+                        <h4 class="txbdstitle tsmall stone hlight txbdbcolor">Our Product </h4>
+                        <h4 class="">Best Featured Product</h4>
+                    </div>
+                </div>
+                <!-- 1 single portfolio -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product_inner">
+                        <div class="product_img" data-aos="zoom-in" data-aos-duration="1500">
+                            <img src="assets/images/fr_product_1.png" alt="product">
+                            <div class="witr_button_area text-center mt-2">
+                                <div class="witr_btn_style mr">
+                                    <div class="witr_btn_sinner">
+                                        <a id="openPopup1" href=""
+                                            class="witr_btn text-decoration-none text-decoration-none">MORE
+                                            DETAILS<i class="fa-solid fa-circle-right mx-2"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="popup1" class="popup">
+                    <div class="popup-content">
+                        <span class="close">&times;</span>
+                        <div class="text-center ">
+                            <h4> <span class="border-bottom border-3 text-uppercase" style="color: #fca50e;">Fresh
+                                    orange</span></h4>
+                        </div>
+                        <div class="p-2">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="d-flex justify-content-center align-items-center h-100">
+                                        <img src="assets/images/fr_product_1.png"
+                                            class="img-fluid object-fit-cover border p-2" alt="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8 my-2">
+
+                                    <div class="">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Business Type</td>
+                                                    <td>
+                                                        Manufacturer, Exporter, Supplier,
+                                                        Retailer, Wholesaler
+                                                    </td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Cultivation Type</td>
+                                                    <td>Organic</td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Shelf Life</td>
+                                                    <td>1week</td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Feature</td>
+                                                    <td>Good Taste, Healthy</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="witr_button_area">
+                                            <div class="witr_btn_style mr">
+                                                <div class="witr_btn_sinner">
+                                                    <a href="contact.html"
+                                                        class="witr_btn text-decoration-none text-decoration-none">SEND
+                                                        ENQUIRY <i class="fa-solid fa-circle-right mx-2"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" card p-4 mt-3">
+                            <div>
+                                <h3>Product Details</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="color-grey">Taste</td>
+                                                <td><b>Sweet</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="color-grey">Country of Origin</td>
+                                                <td><b>India</b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-6">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="color-grey">Packaging Type</td>
+                                            <td>
+                                                <b>Plastic Crate</b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                    Repellat dolores officiis dolorum,
+                                    repudiandae enim necessitatibus qui accusantium totam
+                                    voluptatum et asperiores reiciendis
+                                    porro, aut adipisci tempore? Magni quae sunt explicabo
+                                    inventore ad, consequuntur corrupti
+                                    laboriosam saepe, ducimus temporibus impedit minus? Rem
+                                    accusamus totam quaerat harum
+                                    perferendis recusandae officia tempore voluptatum!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 single portfolio -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product_inner">
+                        <div class="product_img" data-aos="zoom-in" data-aos-duration="1500">
+                            <img src="assets/images/fr_product_2.png" alt="product">
+                            <div class="witr_button_area text-center mt-2">
+                                <div class="witr_btn_style mr">
+                                    <div class="witr_btn_sinner">
+                                        <a id="openPopup2" href=""
+                                            class="witr_btn text-decoration-none text-decoration-none">MORE
+                                            DETAILS<i class="fa-solid fa-circle-right mx-2"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup">
+                    <div class="popup-content">
+                        <span class="close">&times;</span>
+                        <div class="text-center ">
+                            <h4> <span class="border-bottom border-3 text-uppercase" style="color: #fca50e;">Fresh
+                                    Potato</span></h4>
+                        </div>
+                        <div class="p-2">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="d-flex justify-content-center align-items-center h-100">
+                                        <img src="assets/images/fr_product_2.png"
+                                            class="img-fluid object-fit-cover border p-2" alt="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8 my-2">
+
+                                    <div class="">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Business Type</td>
+                                                    <td>
+                                                        Manufacturer, Exporter, Supplier,
+                                                        Retailer, Wholesaler
+                                                    </td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Cultivation Type</td>
+                                                    <td>Organic</td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Shelf Life</td>
+                                                    <td>1week</td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Feature</td>
+                                                    <td>Good Taste, Healthy</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="witr_button_area">
+                                            <div class="witr_btn_style mr">
+                                                <div class="witr_btn_sinner">
+                                                    <a href="contact.html"
+                                                        class="witr_btn text-decoration-none text-decoration-none">SEND
+                                                        ENQUIRY <i class="fa-solid fa-circle-right mx-2"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" card p-4 mt-3">
+                            <div>
+                                <h3>Product Details</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="color-grey">Taste</td>
+                                                <td><b>Sweet</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="color-grey">Country of Origin</td>
+                                                <td><b>India</b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-6">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="color-grey">Packaging Type</td>
+                                            <td>
+                                                <b>Plastic Crate</b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                    Repellat dolores officiis dolorum,
+                                    repudiandae enim necessitatibus qui accusantium totam
+                                    voluptatum et asperiores reiciendis
+                                    porro, aut adipisci tempore? Magni quae sunt explicabo
+                                    inventore ad, consequuntur corrupti
+                                    laboriosam saepe, ducimus temporibus impedit minus? Rem
+                                    accusamus totam quaerat harum
+                                    perferendis recusandae officia tempore voluptatum!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 single portfolio -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product_inner">
+                        <div class="product_img" data-aos="zoom-in" data-aos-duration="1500">
+                            <img src="assets/images/fr_product_3.png" alt="product">
+                            <div class="witr_button_area text-center mt-2">
+                                <div class="witr_btn_style mr">
+                                    <div class="witr_btn_sinner">
+                                        <a id="openPopup3" href=""
+                                            class="witr_btn text-decoration-none text-decoration-none">MORE
+                                            DETAILS<i class="fa-solid fa-circle-right mx-2"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <span class="close">&times;</span>
+                        <div class="text-center ">
+                            <h4> <span class="border-bottom border-3 text-uppercase" style="color: #fca50e;">Fresh
+                                    Pomegranate</span></h4>
+                        </div>
+                        <div class="p-2">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="d-flex justify-content-center align-items-center h-100">
+                                        <img src="assets/images/fr_product_3.png"
+                                            class="img-fluid object-fit-cover border p-2" alt="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8 my-2">
+
+                                    <div class="">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Business Type</td>
+                                                    <td>
+                                                        Manufacturer, Exporter, Supplier,
+                                                        Retailer, Wholesaler
+                                                    </td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Cultivation Type</td>
+                                                    <td>Organic</td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Shelf Life</td>
+                                                    <td>1week</td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Feature</td>
+                                                    <td>Good Taste, Healthy</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="witr_button_area">
+                                            <div class="witr_btn_style mr">
+                                                <div class="witr_btn_sinner">
+                                                    <a href="contact.html"
+                                                        class="witr_btn text-decoration-none text-decoration-none">SEND
+                                                        ENQUIRY <i class="fa-solid fa-circle-right mx-2"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" card p-4 mt-3">
+                            <div>
+                                <h3>Product Details</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="color-grey">Taste</td>
+                                                <td><b>Sweet</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="color-grey">Country of Origin</td>
+                                                <td><b>India</b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-6">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="color-grey">Packaging Type</td>
+                                            <td>
+                                                <b>Plastic Crate</b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                    Repellat dolores officiis dolorum,
+                                    repudiandae enim necessitatibus qui accusantium totam
+                                    voluptatum et asperiores reiciendis
+                                    porro, aut adipisci tempore? Magni quae sunt explicabo
+                                    inventore ad, consequuntur corrupti
+                                    laboriosam saepe, ducimus temporibus impedit minus? Rem
+                                    accusamus totam quaerat harum
+                                    perferendis recusandae officia tempore voluptatum!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 single portfolio -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product_inner">
+                        <div class="product_img" data-aos="zoom-in" data-aos-duration="1500">
+                            <img src="assets/images/fr_product_4.png" alt="product">
+                            <div class="witr_button_area text-center mt-2">
+                                <div class="witr_btn_style mr">
+                                    <div class="witr_btn_sinner">
+                                        <a id="openPopup4" href=""
+                                            class="witr_btn text-decoration-none text-decoration-none">MORE
+                                            DETAILS<i class="fa-solid fa-circle-right mx-2"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <span class="close">&times;</span>
+                        <div class="text-center ">
+                            <h4> <span class="border-bottom border-3 text-uppercase" style="color: #fca50e;">Fresh
+                                Strawberry</span></h4>
+                        </div>
+                        <div class="p-2">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="d-flex justify-content-center align-items-center h-100">
+                                        <img src="assets/images/fr_product_4.png"
+                                            class="img-fluid object-fit-cover border p-2" alt="" />
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-8 my-2">
+
+                                    <div class="">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Business Type</td>
+                                                    <td>
+                                                        Manufacturer, Exporter, Supplier,
+                                                        Retailer, Wholesaler
+                                                    </td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Cultivation Type</td>
+                                                    <td>Organic</td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Shelf Life</td>
+                                                    <td>1week</td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Feature</td>
+                                                    <td>Good Taste, Healthy</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="witr_button_area">
+                                            <div class="witr_btn_style mr">
+                                                <div class="witr_btn_sinner">
+                                                    <a href="contact.html"
+                                                        class="witr_btn text-decoration-none text-decoration-none">SEND
+                                                        ENQUIRY <i class="fa-solid fa-circle-right mx-2"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" card p-4 mt-3">
+                            <div>
+                                <h3>Product Details</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="color-grey">Taste</td>
+                                                <td><b>Sweet</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="color-grey">Country of Origin</td>
+                                                <td><b>India</b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-6">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="color-grey">Packaging Type</td>
+                                            <td>
+                                                <b>Plastic Crate</b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                    Repellat dolores officiis dolorum,
+                                    repudiandae enim necessitatibus qui accusantium totam
+                                    voluptatum et asperiores reiciendis
+                                    porro, aut adipisci tempore? Magni quae sunt explicabo
+                                    inventore ad, consequuntur corrupti
+                                    laboriosam saepe, ducimus temporibus impedit minus? Rem
+                                    accusamus totam quaerat harum
+                                    perferendis recusandae officia tempore voluptatum!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5 single portfolio -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product_inner">
+                        <div class="product_img" data-aos="zoom-in" data-aos-duration="1500">
+                            <img src="assets/images/fr_product_5.png" alt="product">
+                            <div class="witr_button_area text-center mt-2">
+                                <div class="witr_btn_style mr">
+                                    <div class="witr_btn_sinner">
+                                        <a id="openPopup5" href=""
+                                            class="witr_btn text-decoration-none text-decoration-none">MORE
+                                            DETAILS<i class="fa-solid fa-circle-right mx-2"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <span class="close">&times;</span>
+                        <div class="text-center ">
+                            <h4> <span class="border-bottom border-3 text-uppercase" style="color: #fca50e;">Fresh
+                                Broccoli</span></h4>
+                        </div>
+                        <div class="p-2">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="d-flex justify-content-center align-items-center h-100">
+                                        <img src="assets/images/fr_product_5.png"
+                                            class="img-fluid object-fit-cover border p-2" alt="" />
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-8 my-2">
+
+                                    <div class="">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Business Type</td>
+                                                    <td>
+                                                        Manufacturer, Exporter, Supplier,
+                                                        Retailer, Wholesaler
+                                                    </td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Cultivation Type</td>
+                                                    <td>Organic</td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Shelf Life</td>
+                                                    <td>1week</td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Feature</td>
+                                                    <td>Good Taste, Healthy</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="witr_button_area">
+                                            <div class="witr_btn_style mr">
+                                                <div class="witr_btn_sinner">
+                                                    <a href="contact.html"
+                                                        class="witr_btn text-decoration-none text-decoration-none">SEND
+                                                        ENQUIRY <i class="fa-solid fa-circle-right mx-2"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" card p-4 mt-3">
+                            <div>
+                                <h3>Product Details</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="color-grey">Taste</td>
+                                                <td><b>Sweet</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="color-grey">Country of Origin</td>
+                                                <td><b>India</b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-6">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="color-grey">Packaging Type</td>
+                                            <td>
+                                                <b>Plastic Crate</b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                    Repellat dolores officiis dolorum,
+                                    repudiandae enim necessitatibus qui accusantium totam
+                                    voluptatum et asperiores reiciendis
+                                    porro, aut adipisci tempore? Magni quae sunt explicabo
+                                    inventore ad, consequuntur corrupti
+                                    laboriosam saepe, ducimus temporibus impedit minus? Rem
+                                    accusamus totam quaerat harum
+                                    perferendis recusandae officia tempore voluptatum!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6 single portfolio -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product_inner">
+                        <div class="product_img" data-aos="zoom-in" data-aos-duration="1500">
+                            <img src="assets/images/fr_product_6.png" alt="product">
+                            <div class="witr_button_area text-center mt-2">
+                                <div class="witr_btn_style mr">
+                                    <div class="witr_btn_sinner">
+                                        <a id="openPopup6" href=""
+                                            class="witr_btn text-decoration-none text-decoration-none">MORE
+                                            DETAILS<i class="fa-solid fa-circle-right mx-2"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup">
+                    <div class="popup-content">
+                        <span class="close">&times;</span>
+                        <div class="text-center ">
+                            <h4> <span class="border-bottom border-3 text-uppercase" style="color: #fca50e;">Fresh
+                                    apple</span></h4>
+                        </div>
+                        <div class="p-2">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="d-flex justify-content-center align-items-center h-100">
+                                        <img src="assets/images/fr_product_6.png"
+                                            class="img-fluid object-fit-cover border p-2" alt="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8 my-2">
+
+                                    <div class="">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Business Type</td>
+                                                    <td>
+                                                        Manufacturer, Exporter, Supplier,
+                                                        Retailer, Wholesaler
+                                                    </td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Cultivation Type</td>
+                                                    <td>Organic</td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Shelf Life</td>
+                                                    <td>1week</td>
+                                                </tr>
+                                                <tr class="mb-2">
+                                                    <td class="color-grey">Feature</td>
+                                                    <td>Good Taste, Healthy</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="witr_button_area">
+                                            <div class="witr_btn_style mr">
+                                                <div class="witr_btn_sinner">
+                                                    <a href="contact.html"
+                                                        class="witr_btn text-decoration-none text-decoration-none">SEND
+                                                        ENQUIRY <i class="fa-solid fa-circle-right mx-2"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" card p-4 mt-3">
+                            <div>
+                                <h3>Product Details</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="color-grey">Taste</td>
+                                                <td><b>Sweet</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="color-grey">Country of Origin</td>
+                                                <td><b>India</b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-6">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="color-grey">Packaging Type</td>
+                                            <td>
+                                                <b>Plastic Crate</b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                    Repellat dolores officiis dolorum,
+                                    repudiandae enim necessitatibus qui accusantium totam
+                                    voluptatum et asperiores reiciendis
+                                    porro, aut adipisci tempore? Magni quae sunt explicabo
+                                    inventore ad, consequuntur corrupti
+                                    laboriosam saepe, ducimus temporibus impedit minus? Rem
+                                    accusamus totam quaerat harum
+                                    perferendis recusandae officia tempore voluptatum!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- *************************************************************************************************** -->
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="footer-section text-white p-3" style="background-image: url(./assets/images/fr_footer_bg.jpg);
+object-fit: cover;
+background-position: center;
+background-repeat: no-repeat;">
+        <div class="container py-2 mt-3" data-aos="zoom-in" data-aos-duration="2000">
+            <div class="row">
+                <div class="text-center my-2">
+                    <p>© Copyright 2022. All Right Reserved by <a href="#" class="text-decoration-none">Oganic</a></p>
+                </div>
+            </div>
+            <section class="mb-4 text-center">
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-google"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-twitter"></i></a>
+            </section>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Swiper JS -->
+    <!-- Include Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(".slick-carousel").slick({
+            speed: 5000,
+            autoplay: true,
+            autoplaySpeed: 0,
+            cssEase: 'linear',
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            infinite: true,
+            swipeToSlide: true,
+            centerMode: true,
+            focusOnSelect: true,
+            responsive: [
+                {
+                    breakpoint: 1200, // For large screens
+                    settings: {
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 992, // For medium screens
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 768, // For tablets
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 576, // For small screens (mobile)
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+        });
+    </script>
+    <!-- aos js -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+        // script.js
+        let isPoupOpen = false
+        // Get the popup element
+        for (let i = 1; i <= 6; i++) {
+            const popup = document.getElementsByClassName("popup")[i - 1];
+            const openPopup = document.getElementById(`openPopup${i}`);
+            const close = document.getElementsByClassName("close")[i - 1];
+            openPopup.onclick = function (e) {
+                e.preventDefault(); // Prevent the default anchor behavior
+                popup.style.display = "block";
+                isPoupOpen = true;
+            };
+            close.onclick = function (e) {
+                e.preventDefault();
+                isPoupOpen = false;
+                popup.style.display = "none";
+            }
+        }
+
+        window.onclick = function (event) {
+            if (isPoupOpen) {
+                for (let i = 0; i < 6; i++) {
+                    const popup = document.getElementsByClassName("popup")[i];
+                    if (event.target == popup) {
+                        isPoupOpen = false;
+                        popup.style.display = "none";
+                        break;
+                    }
+                }
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
